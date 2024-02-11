@@ -80,17 +80,7 @@ const updateBlog = async (req, res) => {
 };
 
 const updateBlogOpts = {
-  schema:{
-    body:{
-      type:'object',
-      required:['id'],
-      properties:{
-        id:{
-          type:'string'
-        }
-      }
-    }
-  },
+  
   handler: updateBlog,
 };
 
@@ -105,7 +95,7 @@ const getBlogs=async(req, res)=>{
         message:"Blogs fetched",
         data:{
             currentPage:page,
-            Subscriber: getBlogs,
+            blog: getBlogs,
             totalPage
         }
     })
