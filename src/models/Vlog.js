@@ -12,7 +12,7 @@ const vlogSchema = mongoose.Schema(
       type: String,
     },
     isPublish:{
-      type:String,
+      type:Boolean,
       default:false
     }
   },

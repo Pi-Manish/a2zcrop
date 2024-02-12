@@ -5,7 +5,7 @@ const getAllSubscriber = async(req, res)=>{
     const page = req.query.page || 1;
     const pageSize = req.query.pageSize || 20;
     const totalPage = Math.ceil(allSubscribers.length/pageSize);
-    const getSubscriber = await Subscriber.find().skip((page-1)*pageSize).limit(pageSize);
+    const getSubscriber = await Subscriber.find().sort({createdAt:-1}).skip((page-1)*pageSize).limit(pageSize);
     return res.code(200).send({
         status:true,
         message:"All Subscriber fetched",
